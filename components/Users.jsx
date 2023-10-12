@@ -6,7 +6,7 @@ import users from "./dummy";
 const Users = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedCard, setEditedCard] = useState({});
-  const [cards, setCards] = useState(users); 
+  const [cards, setCards] = useState(users);
 
   const handleEdit = (card) => {
     setEditedCard(card);
@@ -30,20 +30,33 @@ const Users = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-screen">
+    <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-screen font-arone">
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-12 pt-12">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white group flex items-start p-3 justify-between rounded-lg shadow-md hover:shadow-lg"
+            className="bg-white group flex items-start p-3 justify-between rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
           >
             <div>
-              <h2 className="text-xl font-semibold">Name : {card.name}</h2>
-              <h3 className="text-xl font-semibold">Age : {card.age}</h3>
-              <h4 className="text-xl font-semibold">DOB : {card.dob}</h4>
-              <h4 className="text-xl font-semibold"> Country : {card.country}</h4>
-
-              <p className="mt-2">{card.content}</p>
+              <img
+                src={card.avatar}
+                alt={`${card.name}'s avatar`}
+                className="w-16 h-16 rounded-full object-cover"
+              />
+              <h2 className="text-2xl font-semibold text-blue-600">
+                Name: {card.name}
+              </h2>
+              <h3 className="text-lg font-semibold text-gray-700">
+                Age: {card.age}
+              </h3>
+              <h4 className="text-lg font-semibold text-gray-700">
+                DOB: {card.dob}
+              </h4>
+              <h4 className="text-lg font-semibold text-gray-700">
+                Country: {card.country}
+              </h4>
+              <p className="mt-2 text-gray-600">{card.content}</p>
             </div>
             <button
               onClick={() => handleEdit(card)}

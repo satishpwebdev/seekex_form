@@ -117,7 +117,6 @@ const Form = () => {
                      <option value="Canada">Canada</option>
                      <option value="UK">UK</option>
                      <option value="India">India</option>
-                     {/* Add more countries as needed */}
                   </select>
                </div>
                <div className="text-center">
