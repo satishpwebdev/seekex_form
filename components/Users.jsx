@@ -34,7 +34,7 @@ const Users = () => {
   return (
     <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-full font-arone">
      
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-12 pt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-12 pt-12 ">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -85,7 +85,7 @@ const Users = () => {
           }
         />
       </Modal>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-4">
         <button onClick={()=>{router.push('/')}} className="py-1 px-4 text-white bg-pink-600 rounded-md">Home</button>
       </div>
     </section>
