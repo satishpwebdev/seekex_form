@@ -32,7 +32,7 @@ const Users = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-screen font-arone">
+    <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-full font-arone">
      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-12 pt-12">
         {cards.map((card, index) => (
