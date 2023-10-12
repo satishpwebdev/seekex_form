@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import Modal from "./Modal";
 import users from "./dummy";
+import { useRouter } from "next/router";
 
 const Users = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedCard, setEditedCard] = useState({});
   const [cards, setCards] = useState(users);
+  const router = useRouter()
 
   const handleEdit = (card) => {
     setEditedCard(card);
@@ -83,6 +85,9 @@ const Users = () => {
           }
         />
       </Modal>
+      <div className="flex items-center justify-center">
+        <button onClick={()=>{router.push('/')}} className="py-1 px-4 text-white bg-pink-600 rounded-md">Home</button>
+      </div>
     </section>
   );
 };
