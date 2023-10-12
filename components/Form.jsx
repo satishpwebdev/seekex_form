@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const Form = () => {
@@ -32,17 +32,18 @@ const Form = () => {
          const resp = await axios.post("https://taskbe.cyclic.cloud/tasks", testData);
          const response = await resp.data;
          console.log("res", response);
-      } catch (error) {}
-      console.log(error);
+      } catch (error) {
+         console.error(error);
+      }
    };
 
    return (
-      <div className="bg-gray-100 min-h-screen flex items-center text-black justify-center font-arone">
+      <div className="bg-texture min-h-screen bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center text-black justify-center font-arone">
          <div className="bg-white p-8 rounded-lg shadow-md w-96">
             <h2 className="text-2xl font-semibold mb-4">Create a Person</h2>
             <form onSubmit={handleSubmit}>
                <div className="mb-4">
-                  <label htmlFor="firstName" className="block text-gray-700">
+                  <label htmlFor="name" className="block text-gray-700">
                      Name
                   </label>
                   <input
